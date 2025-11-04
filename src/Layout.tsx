@@ -10,6 +10,44 @@ const Layout = () => {
     avatar: "https://avatar.iran.liara.run/public/boy",
   };
 
+  const handleInitSDK = () => {
+    const MCRSDK = window.MCRSDK;
+    let sdk = new MCRSDK({
+      clientId: "617a8d7f-bc5f-4373-8a8e-dbe524ad5d2f",
+      email: "hoang.bui@gmail.com",
+      firstName: "Hoang",
+      lastName: "Bui",
+      theme: {
+        palette: {
+          fg: {
+            btnPrimary: "#FFFFFF",
+            btnPrimaryDisabled: "#FFFFFF",
+            checkbox: "#FFFFFF",
+          },
+          brand: {
+            50: "#D9D9D9",
+            100: "#DBEAFE",
+            200: "#BFDBFE",
+            300: "#93C5FD",
+            400: "#60A5FA",
+            500: "#3B82F6",
+            600: "#2563EB",
+            700: "#1D4ED8",
+            800: "#1E40AF",
+            900: "#1E3A8A",
+            950: "#172554",
+          },
+        },
+        logo: "https://mcbr.s3.amazonaws.com/mcbr-logo.png",
+      },
+    });
+
+    sdk.open();
+
+    setTimeout(() => {
+      sdk.auth();
+    }, 1000);
+  };
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -71,7 +109,7 @@ const Layout = () => {
               </select>
 
               {/* User Info */}
-              <div className="flex items-center space-x-3 bg-white border border-gray-200 rounded-lg px-4 py-2 hover:border-blue-300 transition-all duration-200 shadow-sm hover:shadow-md">
+              <div className="flex items-center space-x-3 bg-white border border-gray-200 rounded-lg px-4 py-2 hover:border-blue-300 transition-all duration-200 shadow-sm hover:shadow-md" onClick={handleInitSDK}>
                 <img
                   src={userInfo.avatar}
                   alt={userInfo.name}
