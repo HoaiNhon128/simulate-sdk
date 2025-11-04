@@ -8,6 +8,8 @@ const Layout = () => {
     email: "john.doe@example.com",
     firstName: "John",
     lastName: "Doe",
+    avatar: "https://avatar.iran.liara.run/public/boy",
+    name: "John Doe",
   };
 
   const handleInitSDK = () => {
