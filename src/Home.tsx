@@ -33,14 +33,16 @@ const Home = () => {
     {
       name: "Orlando, United States",
       properties: "3,279 PROPERTIES",
-      price: "",
+      price: "Hotels from $130.86/night",
+
       image:
         "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&h=300&fit=crop",
     },
     {
       name: "Cancun, Mexico",
       properties: "1,734 PROPERTIES",
-      price: "",
+      price: "Hotels from $130.86/night",
+
       image:
         "https://images.unsplash.com/photo-1512813195386-6cf811ad3542?w=400&h=300&fit=crop",
     },
@@ -50,12 +52,14 @@ const Home = () => {
     {
       name: "Honolulu, United States",
       properties: "885 PROPERTIES",
+      price: "Hotels from $84.42/night",
       image:
         "https://images.unsplash.com/photo-1516815231560-8f41ec531527?w=400&h=300&fit=crop",
     },
     {
       name: "Galveston, United States",
       properties: "1,079 PROPERTIES",
+      price: "Hotels from $84.42/night",
       image:
         "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop",
     },
@@ -251,10 +255,12 @@ const Home = () => {
                   <p className="text-sm text-gray-600 mb-2 font-medium">
                     📍 {destination.properties}
                   </p>
-                  {destination.price && (
+                  {destination.price ? (
                     <p className="text-sm text-green-600 mb-4 font-semibold">
                       💰 {destination.price}
                     </p>
+                  ) : (
+                    <div className="mb-4"></div>
                   )}
                   <Button
                     variant="outline"
@@ -318,10 +324,12 @@ const Home = () => {
                   <p className="text-sm text-gray-600 mb-2 font-medium">
                     🏨 {destination.properties}
                   </p>
-                  {destination.price && (
+                  {destination.price ? (
                     <p className="text-sm text-green-600 mb-4 font-semibold">
                       💰 {destination.price}
                     </p>
+                  ) : (
+                    <div className="mb-4"></div>
                   )}
                   <Button
                     variant="outline"
