@@ -38,7 +38,7 @@ const Layout = () => {
             950: "#172554",
           },
         },
-        logo: "https://mcbr.s3.amazonaws.com/mcbr-logo.png",
+        logo: "http://localhost:5173/starbucks.svg",
       },
     });
 
@@ -109,7 +109,10 @@ const Layout = () => {
               </select>
 
               {/* User Info */}
-              <div className="flex items-center space-x-3 bg-white border border-gray-200 rounded-lg px-4 py-2 hover:border-blue-300 transition-all duration-200 shadow-sm hover:shadow-md" onClick={handleInitSDK}>
+              <div
+                className="flex items-center space-x-3 bg-white border border-gray-200 rounded-lg px-4 py-2 hover:border-blue-300 transition-all duration-200 shadow-sm hover:shadow-md"
+                onClick={handleInitSDK}
+              >
                 <img
                   src={userInfo.avatar}
                   alt={userInfo.name}
