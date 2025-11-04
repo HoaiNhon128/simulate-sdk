@@ -5,18 +5,16 @@ const Layout = () => {
   const [theme, setTheme] = useState("orange");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const userInfo = {
-    name: "John Doe",
     email: "john.doe@example.com",
-    avatar: "https://avatar.iran.liara.run/public/boy",
+    firstName: "John",
+    lastName: "Doe",
   };
 
   const handleInitSDK = () => {
     const MCRSDK = window.MCRSDK;
     let sdk = new MCRSDK({
       clientId: "617a8d7f-bc5f-4373-8a8e-dbe524ad5d2f",
-      email: "hoang.bui@gmail.com",
-      firstName: "Hoang",
-      lastName: "Bui",
+      ...userInfo,
       theme: {
         palette: {
           fg: {
