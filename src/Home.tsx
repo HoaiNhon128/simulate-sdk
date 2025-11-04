@@ -34,7 +34,6 @@ const Home = () => {
       name: "Orlando, United States",
       properties: "3,279 PROPERTIES",
       price: "Hotels from $130.86/night",
-
       image:
         "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&h=300&fit=crop",
     },

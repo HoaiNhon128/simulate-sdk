@@ -1,10 +1,14 @@
-import { Button } from "mcr-design-systems";
 import { useState } from "react";
 import { Outlet } from "react-router";
 
 const Layout = () => {
-  const [currency, setCurrency] = useState("USD");
+  const [theme, setTheme] = useState("orange");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const userInfo = {
+    name: "John Doe",
+    email: "john.doe@example.com",
+    avatar: "https://avatar.iran.liara.run/public/boy",
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -56,23 +60,30 @@ const Layout = () => {
 
             {/* Right Section */}
             <div className="flex items-center space-x-4">
-              {/* Currency Selector */}
+              {/* Theme Selector */}
               <select
-                value={currency}
-                onChange={(e) => setCurrency(e.target.value)}
+                value={theme}
+                onChange={(e) => setTheme(e.target.value)}
                 className="border border-gray-200 rounded-lg px-3 py-2 text-sm bg-white hover:border-blue-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"
               >
-                <option value="USD">🇺🇸 USD</option>
-                <option value="CAD">🇨🇦 CAD</option>
-                <option value="EUR">🇪🇺 EUR</option>
-                <option value="GBP">🇬🇧 GBP</option>
-                <option value="AUD">🇦🇺 AUD</option>
+                <option value="orange">🧡 Orange</option>
+                <option value="blue">💙 Blue</option>
               </select>
 
-              {/* Sign In Button */}
-              <Button className="bg-linear-to-r from-blue-600 to-blue-700 text-white px-6 py-2 hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl">
-                Sign In
-              </Button>
+              {/* User Info */}
+              <div className="flex items-center space-x-3 bg-white border border-gray-200 rounded-lg px-4 py-2 hover:border-blue-300 transition-all duration-200 shadow-sm hover:shadow-md">
+                <img
+                  src={userInfo.avatar}
+                  alt={userInfo.name}
+                  className="w-8 h-8 rounded-full object-cover"
+                />
+                <div className="hidden md:block">
+                  <p className="text-sm font-medium text-gray-900">
+                    {userInfo.name}
+                  </p>
+                  <p className="text-xs text-gray-500">{userInfo.email}</p>
+                </div>
+              </div>
 
               {/* Mobile Menu Button */}
               <button
