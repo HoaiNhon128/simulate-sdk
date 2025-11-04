@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Outlet } from "react-router";
+import { COLORS } from "./color";
 
 const Layout = () => {
   const [theme, setTheme] = useState("orange");
@@ -13,6 +14,11 @@ const Layout = () => {
   };
 
   const handleInitSDK = () => {
+    const brandColorMap: Record<string, any> = {
+      orange: COLORS.orange,
+      blue: COLORS.blue,
+      green: COLORS.green,
+    };
     const MCRSDK = window.MCRSDK;
     let sdk = new MCRSDK({
       clientId: "617a8d7f-bc5f-4373-8a8e-dbe524ad5d2f",
@@ -24,19 +30,7 @@ const Layout = () => {
             btnPrimaryDisabled: "#FFFFFF",
             checkbox: "#FFFFFF",
           },
-          brand: {
-            50: "#D9D9D9",
-            100: "#DBEAFE",
-            200: "#BFDBFE",
-            300: "#93C5FD",
-            400: "#60A5FA",
-            500: "#3B82F6",
-            600: "#2563EB",
-            700: "#1D4ED8",
-            800: "#1E40AF",
-            900: "#1E3A8A",
-            950: "#172554",
-          },
+          brand: brandColorMap[theme],
         },
         logo: "http://localhost:5173/starbucks.svg",
       },
@@ -106,6 +100,7 @@ const Layout = () => {
               >
                 <option value="orange">🧡 Orange</option>
                 <option value="blue">💙 Blue</option>
+                <option value="green">💚 Green</option>
               </select>
 
               {/* User Info */}
