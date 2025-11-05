@@ -33,7 +33,7 @@ const Layout = () => {
           },
           brand: brandColorMap[theme],
         },
-        logo: `http://localhost:5173/${selectedLogo}.svg`,
+        logo: `${import.meta.env.VITE_APP_URL}/${selectedLogo}.svg`,
       },
     });
 
