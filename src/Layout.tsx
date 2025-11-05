@@ -4,6 +4,7 @@ import { COLORS } from "./color";
 
 const Layout = () => {
   const [theme, setTheme] = useState("orange");
+  const [selectedLogo, setSelectedLogo] = useState("starbucks");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const userInfo = {
     email: "john.doe@example.com",
@@ -32,7 +33,7 @@ const Layout = () => {
           },
           brand: brandColorMap[theme],
         },
-        logo: "http://localhost:5173/starbucks.svg",
+        logo: `http://localhost:5173/${selectedLogo}.svg`,
       },
     });
 
@@ -101,6 +102,19 @@ const Layout = () => {
                 <option value="orange">🧡 Orange</option>
                 <option value="blue">💙 Blue</option>
                 <option value="green">💚 Green</option>
+              </select>
+
+              {/* Logo Selector */}
+              <select
+                value={selectedLogo}
+                onChange={(e) => setSelectedLogo(e.target.value)}
+                className="border border-gray-200 rounded-lg px-3 py-2 text-sm bg-white hover:border-blue-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"
+              >
+                <option value="starbucks"> Starbucks</option>
+                <option value="domino">Domino's</option>
+                <option value="In_n_out">In-N-Out</option>
+                <option value="krispy_kreme">Krispy Kreme</option>
+                <option value="papa_john">Papa John's</option>
               </select>
 
               {/* User Info */}
