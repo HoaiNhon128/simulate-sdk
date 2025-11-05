@@ -1,4 +1,3 @@
-import { Button } from "mcr-design-systems";
 import { useState } from "react";
 
 const Home = () => {
@@ -188,9 +187,9 @@ const Home = () => {
               </div>
 
               <div className="flex items-end">
-                <Button className="w-full bg-linear-to-r from-orange-500 to-red-500 text-white font-bold py-4 px-6 rounded-xl hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                <button className="w-full bg-linear-to-r from-orange-500 to-red-500 text-white font-bold py-4 px-6 rounded-xl hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
                   🔍 Find Your Hotel
-                </Button>
+                </button>
               </div>
             </div>
 
@@ -261,13 +260,9 @@ const Home = () => {
                   ) : (
                     <div className="mb-4"></div>
                   )}
-                  <Button
-                    variant="outline"
-                    size="small"
-                    className="w-full group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all duration-300 font-semibold"
-                  >
+                  <button className="w-full group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all duration-300 font-semibold">
                     EXPLORE NOW →
-                  </Button>
+                  </button>
                 </div>
               </div>
             ))}
@@ -330,13 +325,9 @@ const Home = () => {
                   ) : (
                     <div className="mb-4"></div>
                   )}
-                  <Button
-                    variant="outline"
-                    size="small"
-                    className="w-full group-hover:bg-orange-500 group-hover:text-white group-hover:border-orange-500 transition-all duration-300 font-semibold border-orange-200"
-                  >
+                  <button className="w-full group-hover:bg-orange-500 group-hover:text-white group-hover:border-orange-500 transition-all duration-300 font-semibold border-orange-200">
                     EXPLORE NOW 🌊
-                  </Button>
+                  </button>
                 </div>
               </div>
             ))}

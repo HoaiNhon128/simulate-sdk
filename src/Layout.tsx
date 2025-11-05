@@ -1,8 +1,7 @@
-import { useState } from "react";
-import { Outlet } from "react-router";
+import { useState, type ReactNode } from "react";
 import { COLORS } from "./color";
 
-const Layout = () => {
+const Layout = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState("orange");
   const [selectedLogo, setSelectedLogo] = useState("starbucks");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,13 +14,15 @@ const Layout = () => {
   };
 
   const handleInitSDK = () => {
-    const brandColorMap: Record<string, any> = {
+    const brandColorMap: Record<string, object> = {
       orange: COLORS.orange,
       blue: COLORS.blue,
       green: COLORS.green,
     };
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     const MCRSDK = window.MCRSDK;
-    let sdk = new MCRSDK({
+    const sdk = new MCRSDK({
       clientId: "617a8d7f-bc5f-4373-8a8e-dbe524ad5d2f",
       ...userInfo,
       theme: {
@@ -192,9 +193,7 @@ const Layout = () => {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1">
-        <Outlet />
-      </main>
+      <main className="flex-1">{children}</main>
     </div>
   );
 };

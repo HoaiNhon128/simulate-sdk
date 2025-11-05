@@ -1,24 +1,11 @@
-import { RouterProvider } from "react-router";
-import {
-  ThemeProvider,
-  ToastProvider,
-  TooltipProvider,
-} from "mcr-design-systems";
-import router from "./router";
+import Layout from "./Layout";
+import Home from "./Home";
 
 function App() {
   return (
-    <ThemeProvider
-      defaultTheme="light"
-      enableSystem={false}
-      enableCustomPersister
-    >
-      <TooltipProvider>
-        <ToastProvider>
-          <RouterProvider router={router} />
-        </ToastProvider>
-      </TooltipProvider>
-    </ThemeProvider>
+    <Layout>
+      <Home />
+    </Layout>
   );
 }
 
